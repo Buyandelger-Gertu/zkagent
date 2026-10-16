@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Терминал нь LAN дотор энгийн TCP ярьдаг (HTTP ч биш) тул түүнд энэ
+  тохиргоо хамаарахгүй. Энэ нь ЗӨВХӨН backend рүү хандахад үйлчилнэ.
+
+  Туршилтын үед http://192.168.x.x:3000 рүү хандах шаардлага гардаг тул
+  cleartext-ийг нээв. Backend домэйнтэй, HTTPS-тэй болмогц
+  cleartextTrafficPermitted="false" болгоно — тэр үед токен ил явахаа
+  болино.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

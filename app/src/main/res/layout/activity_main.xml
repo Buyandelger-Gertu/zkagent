@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── Төлөв ─────────────────────────────────────────────── -->
+
+        <TextView
+            android:id="@+id/tvState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Зогссон"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHeadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="—"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnStartStop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Эхлүүлэх" />
+
+        <!-- ── Backend ───────────────────────────────────────────── -->
+
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Backend" />
+
+        <EditText
+            android:id="@+id/etServer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="https://hr.gertu.mn"
+            android:inputType="textUri"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/etToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Гүүрийн токен (bridge_token)"
+            android:inputType="textVisiblePassword"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/btnTestServer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?attr/materialButtonOutlinedStyle"
+            android:text="Backend шалгах" />
+
+        <!-- ── Терминал ──────────────────────────────────────────── -->
+
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Терминал" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Нэр (жишээ: Үндсэн орц)"
+            android:inputType="text"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/etSn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Сериал дугаар (заавал биш)"
+            android:inputType="text"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/etHost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IP хаяг (192.168.1.104)"
+            android:inputType="text"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/etPort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Порт (4370)"
+            android:inputType="number"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/etCommKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comm Key (тавиагүй бол хоосон)"
+            android:inputType="number"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/btnTestDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?attr/materialButtonOutlinedStyle"
+            android:text="Терминал шалгах" />
+
+        <!-- ── Ажиллагаа ─────────────────────────────────────────── -->
+
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ажиллагаа" />
+
+        <EditText
+            android:id="@+id/etPoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Давтамж, секунд (60)"
+            android:inputType="number"
+            android:autofillHints="" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swSyncTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Терминалын цагийг тааруулах" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swAutoStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Restart хийхэд автоматаар асах" />
+
+        <Button
+            android:id="@+id/btnBattery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="?attr/materialButtonOutlinedStyle"
+            android:text="Батерейн хязгаарлалтаас хасах" />
+
+        <Button
+            android:id="@+id/btnResetWatermark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?attr/materialButtonOutlinedStyle"
+            android:text="Тэмдэглэл цэвэрлэх (бүх лог дахин илгээнэ)" />
+
+        <!-- ── Лог ───────────────────────────────────────────────── -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Лог"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnClearLog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?attr/materialButtonOutlinedStyle"
+                android:text="Цэвэрлэх" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:textIsSelectable="true"
+            android:text="" />
+
+    </LinearLayout>
+</ScrollView>
